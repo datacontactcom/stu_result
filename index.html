@@ -1,0 +1,83 @@
+
+<script type="text/javascript">
+function chkFields(frm)
+{
+	var illegalChars = /[^A-Za-z\d]/;
+	
+	if(frm.txtRegdno.value == "")
+	{
+		alert("Enter Roll Number");
+		frm.txtRegdno.focus();
+		return false;
+	}
+	else if(frm.txtRegdno.value.length < 0)
+	{
+		alert("Invalid Roll Number");
+		frm.txtRegdno.focus();
+		return false;
+	}
+	else if(illegalChars.test(frm.txtRegdno.value))
+	{
+		alert("Invalid Roll Number");
+		frm.txtRegdno.focus();
+		return false;
+	}
+	
+	frm.txtRegdno.value = frm.txtRegdno.value.toUpperCase();
+	window.location.href = "https://easyexam.co.in/result/" + frm.txtRegdno.value + ".pdf";
+	return false;
+}
+</script>
+<html>
+    <head>
+     <link rel="stylesheet" href="css/bgtio.css">  
+
+</head>
+
+<body class="bg">
+<title>SWAMI VIVEKANAND UNIVERSITY</title>
+ <div class="header">
+    <h2 style="text-align:center;"><img src="https://www.swamivivekanandauniversity.ac.in/resource/assets/img/logo.png"> </h2>
+    <h4 style="text-align:center; font-family: verdana, sans-serif;">Result Download</h4>
+<!-- Form Section -->    
+<div style="text-align:center;"  > 
+<form action="" method="post" name="frmResults" id="frmResults" onsubmit="return chkFields(this);">
+							  Examination Enrollment No:
+                                <input name="txtRegdno" type="text" class="inputtxt" id="txtRegdno" size="20" maxlength="21" /> 
+              &nbsp; <input name="cmdSearch" type="submit" class="mybutton" id="cmdSearch" value="Show" />
+</form>
+</div>
+ <!-- End Form Section -->      
+   <!-- Print Section --> 
+    <h4 style="text-align:center;"> 
+    </h4>
+     </div>
+
+<!-- End Print Section -->
+    <table> <tr>
+    <td></td>
+    <td></td>
+    <td style="float:right; font-family: verdana, sans-serif;"></td>
+    <td>
+    <a style="float:right" href="" onClick="window.print()"></a></td>
+    </tr>
+    </table>
+    
+
+<!-- End Print Section -->
+
+
+<h3 style="text-align:center;">  </h3	
+   ></div>
+			
+        <p style="font-size:12px;"><strong>Disclaimer:</strong> VMU is not responsible for any inadvertent error that may have crept in the results being published on NET. The results published on net are for immediate information to the examinees. These cannot be treated as original mark sheets. Original mark sheets have been issued by the University separately.
+        </p>   
+        
+      <div style="text-align:center;font-family: verdana, sans-serif;font-size: 14px;width: 100%; margin-top:-20px;">
+      <a href="https://www.swamivivekanandauniversity.ac.in//"><strong>Click here for SVU Home Page</strong></a></div>  
+      
+
+      
+	</body>
+    
+</html>
